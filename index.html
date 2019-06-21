@@ -1,136 +1,96 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-    <head>
-	    <title>YuShouCY</title>
-	    <link rel="Shortcut Icon" type="image/x-icon" href="./icon.ico" />
-	    
-	    <!-- Metadata-->
-	    
-	    <meta charset="UTF-8">
-	    <meta name="author" content="WoodMan" />
-	    <meta name="description" content="一位熱愛程式及科技的學生" />
-	    <meta name="keywords"  content="woodman,木頭人,木人" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    
-	    <!-- Facebook Metadata-->
-	    <meta property="og:url" content="https://woodman.pw" />
-        <meta property="og:type" content="author" />
-        <meta property="og:title" content="WoodMan's website'" />
-        <meta property="og:description" content="WoodMan 一位熱愛程式的學生" />
-        <meta property="og:image" content="https://www.gravatar.com/avatar/6ac7dce05f1985234a0ef26bc97c8ab2?s=512" />
-        
-        <!-- Twitter Metadata -->
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@WoodManGaming" />
-        <meta name="twitter:title" content="WoodMan" />
-        <meta name="twitter:description" content="WoodMan 一位熱愛程式的學生" />
-        <meta name="twitter:image" content="https://www.gravatar.com/avatar/6ac7dce05f1985234a0ef26bc97c8ab2?s=512" />
-	    
-	    <!-- CSS -->
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link href="./css/style.css" rel="stylesheet">
-        
-        <!-- JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.extensions.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/vendors/jquery.easings.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/vendors/scrolloverflow.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.js"></script>
-    </head>
-    <body>
-        <div id="fullpage">
-            <div class="section" id="header">
-                <div id="header_bg"></div>
-                <div class="center_box" id="header_box">
-                    <center>
-                        <img class="profile_img" src="https://www.gravatar.com/avatar/6ac7dce05f1985234a0ef26bc97c8ab2?s=512">
-                        <h1 style="font-size:3em" id="profile_text">WoodMan</h1>
-                        <h1 style="font-size:3em" id="profile_text">一顆熱愛程式、科技、資訊的木頭</h1>
-                    </center>
-                </div>
-                <a href="#" onclick="$.fn.fullpage.moveSectionDown();" class="fa fa-angle-double-down fa-2x down-arrow"></a>
-            </div>
-            
-            <div class="section" id="skills">
-                <div id="bg"></div>
-                <div class="center_box" id="skills_box">
-                    <div class="ts very narrow container">
-                        <h5 class="ts header header_white">
-                            <i class="code icon"></i>
-                            <div class="content">
-                                我會的東西
-                            </div>
-                        </h5>
-                        <div class="ts grid">
-                            <div class="six wide column">
-                                <h1 class="skilltext" class="ts header">Python</h1>
-                                <div id="python_circle">
-                                    <strong></strong>
-                                </div>
-                                <h1 class="skilltext" class="ts header">HTML/CSS</h1>
-                                <div id="HTML_circle">
-                                    <strong></strong>
-                                </div>
-                            </div>
-                            <div class="four wide column"></div>
-                            <div class="six wide column">
-                                <h1 class="skilltext" class="ts header">C#</h1>
-                                <div id="csharp_circle">
-                                    <strong></strong>
-                                </div>
-                                <h1 class="skilltext" class="ts header">Node.JS</h1>
-                                <div id="nodejs_circle">
-                                    <strong></strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#" onclick="$.fn.fullpage.moveSectionDown();" class="fa fa-angle-double-down fa-2x down-arrow"></a>
-            </div>
-            
-            <div class="section" id="tasks">
-                <div id="bg"></div>
-                <div class="center_box" id="tasks_box">
-                    <div class="ts very narrow container">
-                        <h5 class="ts header header_white">
-                            <i class="tasks icon"></i>
-                            <div class="content">
-                                作品
-                            </div>
-                        </h5>
-                        <h3 class="ts header">
-                            <i class="frown icon"></i>
-                            <div class="content">
-                                目前沒有qwq
-                            </div>
-                        </h3>
-                    </div>
-                </div>
-                <a href="#" onclick="$.fn.fullpage.moveSectionDown();" class="fa fa-angle-double-down fa-2x down-arrow"></a>
-            </div>
-            
-            <div class="section" id="callme">
-                <div id="bg"></div>
-                <div class="center_box" id="callme_box">
-                    <div class="ts very narrow container">
-                        <h5 class="ts header header_white">
-                            <i class="talk icon"></i>
-                            <div class="content">
-                                聯繫我
-                            </div>
-                        </h5>
-                        <center>
-                            <a href="https://github.com/WoodManGitHub"><span class="link fa fa-github" style="margin:0.2em;font-size:6em"></span></a>
-                        </center>
-                    </div>
-                </div>
-                <a href="#" onclick="$.fn.fullpage.moveTo('header', 1);" class="fa fa-angle-double-up fa-2x down-arrow"></a>
-            </div>
-        </div>
-    </body>
-    <script src="./js/main.js"></script>
+
+<head>
+	<title>About Me - WoodMan</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<script src="https://www.amcharts.com/lib/4/core.js"></script>
+	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/dark.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="logo">
+				<img class="profile_img" src="https://www.gravatar.com/avatar/6ac7dce05f1985234a0ef26bc97c8ab2?s=1024">
+			</div>
+			<div class="content">
+				<div class="inner">
+					<h1>WoodMan</h1>
+					<p>一顆熱愛程式、資訊、科技的木頭</p>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#skill">Skill</a></li>
+					<li><a href="#project">Project</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Intro -->
+			<article id="about">
+				<h2 class="major">About Me</h2>
+				<p>就只是一顆木頭，但我熱愛程式、科技以及資訊</p>
+				<p>喜歡學習新的知識，也樂於實作及思考</p>
+				<p>目標是成為一名全端工程師！</p>
+			</article>
+
+			<!-- Skill -->
+			<article id="skill">
+				<h2 class="major">Skill</h2>
+				<div id="chartdiv"></div>
+			</article>
+
+			<!-- Project -->
+			<article id="project">
+				<h2 class="major">Project</h2>
+				<p>目前沒有QQ</p>
+			</article>
+
+			<!-- Contact -->
+			<article id="contact">
+				<h2 class="major">Contact</h2>
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="https://github.com/WoodManGitHub" class="icon brands fa-github"><span
+								class="label">GitHub</span></a></li>
+				</ul>
+			</article>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+		</footer>
+
+	</div>
+
+	<!-- BG -->
+	<div id="bg"></div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/skill.js"></script>
+</body>
+
 </html>
