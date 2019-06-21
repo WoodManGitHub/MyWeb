@@ -37,24 +37,24 @@ $(document).ready(function() {
                 });
                 $('#HTML_circle').circleProgress({
                     startAngle: - Math.PI / 2,
+                    value: 0.75,
+                    fill: {color: '#BE77FF'}
+                }).on('circle-animation-progress', function(event, progress) {
+                    $(this).find('strong').html(Math.round(75 * progress) + "%");
+                });
+                $('#nodejs_circle').circleProgress({
+                    startAngle: - Math.PI / 2,
+                    value: 0.8,
+                    fill: {color: '#BE77FF'}
+                }).on('circle-animation-progress', function(event, progress) {
+                    $(this).find('strong').html(Math.round(80 * progress) + "%");
+                });
+                $('#kotlin_circle').circleProgress({
+                    startAngle: - Math.PI / 2,
                     value: 0.5,
                     fill: {color: '#BE77FF'}
                 }).on('circle-animation-progress', function(event, progress) {
                     $(this).find('strong').html(Math.round(50 * progress) + "%");
-                });
-                $('#csharp_circle').circleProgress({
-                    startAngle: - Math.PI / 2,
-                    value: 0.4,
-                    fill: {color: '#BE77FF'}
-                }).on('circle-animation-progress', function(event, progress) {
-                    $(this).find('strong').html(Math.round(40 * progress) + "%");
-                });
-                $('#nodejs_circle').circleProgress({
-                    startAngle: - Math.PI / 2,
-                    value: 0.65,
-                    fill: {color: '#BE77FF'}
-                }).on('circle-animation-progress', function(event, progress) {
-                    $(this).find('strong').html(Math.round(65 * progress) + "%");
                 });
             }
         }
