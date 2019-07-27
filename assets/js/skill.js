@@ -23,10 +23,6 @@ am4core.ready(function () {
         "lang": "HTML/CSS",
         "value": 80,
         "full": 100
-    }, {
-        "lang": "Kotlin",
-        "value": 30,
-        "full": 100
     }];
 
     // Make chart not full circle
