@@ -1,99 +1,129 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<!-- info -->
-	<title>About Me - WoodMan</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<meta name="author" content="WoodMan" />
-	<meta name="description" content="一顆熱愛程式、資訊、科技的木頭" />
-	<meta name="keywords" content="woodman,木頭人,木人,woodmangithub" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-	<!-- Skill JS -->
-	<script src="https://www.amcharts.com/lib/4/core.js"></script>
-	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
-	<script src="https://www.amcharts.com/lib/4/themes/dark.js"></script>
-	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <meta charset="utf-8" />
+    <title>WoodMan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Personal profile of WoodMan, a wood learning the web technology." />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/brands.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/solid.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body class="is-preload">
+<body>
+    <header id="about-wrapper" class="page about-wrapper">
+        <div class="about-outer">
+            <div class="about-inner">
+                <img class="avatar" src="https://www.gravatar.com/avatar/6ac7dce05f1985234a0ef26bc97c8ab2?s=512" />
+                <h1>WoodMan</h1>
+                <p class="links">
+                    <a href="https://blog.woodman.pw"><button class="button">Blog</button></a>
+                </p>
+                <p class="cursor target">
+                    HI! i'm WoodMan,
+                    <!-- $setTypeInterval 500 -->
+                    <!-- $setTypeInterval 50 --> a wood learning the network technology.
+                    <!-- $delay 2000 -->
+                    <!-- $clear -->
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+                    <!-- $type Welcome to my webpage. -->
+                    <!-- $delay 2000 -->
+                    <!-- $clear -->
 
-		<!-- Header -->
-		<header id="header">
-			<div class="logo">
-				<img class="profile_img" src="https://www.gravatar.com/avatar/6ac7dce05f1985234a0ef26bc97c8ab2?s=512">
-			</div>
-			<div class="content">
-				<div class="inner">
-					<h1>WoodMan</h1>
-					<p>一顆熱愛程式、資訊、科技的木頭</p>
-				</div>
-			</div>
-			<nav>
-				<ul>
-					<li><a href="#about">About</a></li>
-					<li><a href="#skill">Skill</a></li>
-					<li><a href="#project">Project</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
+                    <!-- $type I like to research and learn new technologies. -->
+                    <!-- $delay 2000 -->
 
-		<!-- Main -->
-		<div id="main">
+                    <!-- $reset -->
+                </p>
+                <button class="control play hide"></button>
+            </div>
+        </div>
+    </header>
 
-			<!-- Intro -->
-			<article id="about">
-				<h2 class="major">About Me</h2>
-				<p>就只是一顆木頭，但我熱愛程式、科技以及資訊</p>
-				<p>喜歡學習新的知識，也樂於實作及思考</p>
-				<p>目標是成為一名全端工程師！</p>
-			</article>
+    <section id="learning" class="page learning">
+        <h2>Skill</h2>
+        <section class="skill">
+            <div class="skill-inner">
+                <i class="fab fa-html5 fa-5x" style="color: #ff7755"></i>
+                <h3>HTML</h3>
+                <p class="text">
+                    HTML is the standard markup language for documents designed to be
+                    displayed in a web browser.
+                </p>
+            </div>
+        </section>
+        <section class="skill">
+            <div class="skill-inner">
+                <i class="fab fa-css3 fa-5x" style="color: #5577ff"></i>
+                <h3>CSS</h3>
+                <p class="text">
+                    CSS is a style sheet language used for describing the presentation
+                    of a document written in a markup language like HTML.
+                </p>
+            </div>
+        </section>
+        <section class="skill">
+            <div class="skill-inner">
+                <div class="js-icon"></div>
+                <h3>JavaScript</h3>
+                <p class="text">
+                    JavaScript is a high-level, interpreted scripting language that
+                    conforms to the ECMAScript specification.
+                </p>
+            </div>
+        </section>
+        <section class="skill">
+            <div class="skill-inner">
+                <i class="fab fa-python fa-5x" style="color: #3a57cc"></i>
+                <h3>Python</h3>
+                <p class="text">
+                    Python is an interpreted, high-level, general-purpose programming
+                    language.
+                </p>
+            </div>
+        </section>
+        <section class="skill">
+            <div class="skill-inner">
+                <i class="fas fa-play-circle fa-5x" style="color: #383838"></i>
+                <h3>CI / CD</h3>
+                <p class="text">
+                    E.g. GitHub-Actions or Gitlab-CI and CircleCI
+                </p>
+            </div>
+        </section>
+        <section class="skill">
+            <div class="skill-inner">
+                <i class="fas fa-server fa-5x" style="color: #383838"></i>
+                <h3>Server Manager</h3>
+                <p class="text">
+                </p>
+            </div>
+        </section>
+    </section>
 
-			<!-- Skill -->
-			<article id="skill">
-				<h2 class="major">Skill</h2>
-				<div id="chartdiv"></div>
-			</article>
+    <section id="contact" class="page contact">
+        <h2>Contact <i class="fas fa-comments"></i></h2>
+        <section class="contact-method github">
+            <i class="fab fa-github fa-5x"></i>
+            <h3><a href="https://github.com/WoodManGitHub">Github</a></h3>
+        </section>
+    </section>
+    <footer id="copyright" class="page footer copyright">
+        <h3>About this page</h3>
+        <p>
+            created by
+            <a id="author" href="http://woodman.pw" rel="author">WoodMan</a><br />
+        </p>
+    </footer>
+    <script>
 
-			<!-- Project -->
-			<article id="project">
-				<h2 class="major">Project</h2>
-				<p>目前沒有QQ</p>
-			</article>
-
-			<!-- Contact -->
-			<article id="contact">
-				<h2 class="major">Contact</h2>
-				<ul class="icons">
-					<li><a href="https://github.com/WoodManGitHub" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-				</ul>
-			</article>
-
-		</div>
-
-		<!-- Footer -->
-		<footer id="footer">
-		</footer>
-
-	</div>
-
-	<!-- BG -->
-	<div id="bg"></div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/skill.js"></script>
+    </script>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
