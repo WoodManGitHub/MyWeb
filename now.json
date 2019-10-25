@@ -1,8 +1,6 @@
 {
     "version": 2,
     "builds": [
-        { "src": "index.html", "use": "@now/static" },
-        { "src": "css/*.css", "use": "@now/static" },
-        { "src": "assets/**", "use": "@now/static" }
+        { "src": "**", "use": "@now/static" }
     ]
 }
