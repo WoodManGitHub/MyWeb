@@ -4,6 +4,6 @@
         { "src": "index.html", "use": "@now/static" }
     ],
     "routes": [
-        { "src": "css/style.js", "dest": "css/style.js" }
+        { "src": "css/style.css", "dest": "css/style.css" }
     ]
 }
