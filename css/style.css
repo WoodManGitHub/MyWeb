@@ -16,6 +16,11 @@ a:active {
     color: #ffffff;
 }
 
+.iconify {
+    width: 75px;
+    height: 75px;
+}
+
 .avatar {
     border-radius: 50%;
     width: 100%;
