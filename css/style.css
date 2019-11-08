@@ -244,6 +244,7 @@ em {
 }
 
 .learning .skill .skill-inner {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     background: #ffffff;
@@ -263,6 +264,13 @@ em {
     padding: 1em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+}
+
+.learning .skill .skill-inner .progress {
+    position: absolute;
+    height: 6px;
+    background-color: #7781c6;
+    bottom: 0;
 }
 
 .learning .skill .skill-inner .js-icon {
