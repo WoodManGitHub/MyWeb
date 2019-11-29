@@ -14,9 +14,6 @@
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/brands.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/solid.css" rel="stylesheet" type="text/css" />
     <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
 </head>
 
@@ -58,7 +55,7 @@
         <h2>Skill</h2>
         <section class="skill">
             <div class="skill-inner">
-                <i class="fab fa-html5 fa-5x" style="color: #ff7755"></i>
+                <span class="iconify" data-icon="logos:html-5" data-inline="false"></span>
                 <h3>HTML</h3>
                 <p class="text">
                     HTML is the standard markup language for documents designed to be
@@ -69,7 +66,7 @@
         </section>
         <section class="skill">
             <div class="skill-inner">
-                <i class="fab fa-css3 fa-5x" style="color: #5577ff"></i>
+                <span class="iconify" data-icon="logos:css-3" data-inline="false"></span>
                 <h3>CSS</h3>
                 <p class="text">
                     CSS is a style sheet language used for describing the presentation
@@ -153,7 +150,7 @@
         </section>
         <section class="skill">
             <div class="skill-inner">
-                <i class="fas fa-play-circle fa-5x" style="color: #383838"></i>
+                <span class="iconify" data-icon="ic:baseline-all-inclusive" data-inline="false"></span>
                 <h3>CI / CD</h3>
                 <p class="text">
                     CI/CD or CICD generally refers to the combined practices of continuous integration and continuous delivery.
@@ -164,22 +161,37 @@
     </section>
 
     <section id="contact" class="page contact">
-        <h2>Contact <i class="fas fa-comments"></i></h2>
+        <h2>Contact</h2>
         <section class="contact-method github">
-            <i class="fab fa-github fa-5x"></i>
-            <h3><a href="https://github.com/WoodManGitHub">Github</a></h3>
+            <h3>
+                <a href="https://github.com/WoodManGitHub">
+                    <span class="iconify" data-icon="octicon:mark-github" data-inline="false"></span>
+                    <br>
+                    GitHub
+                </a>
+            </h3>
         </section>
     </section>
+
     <footer id="copyright" class="page footer copyright">
         <h3>About this page</h3>
         <p>
-            created by
-            <a id="author" href="http://woodman.pw" rel="author">WoodMan</a><br />
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <img alt="創用 CC 授權條款" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+            </a>
+            <br>
+            除另有註明，網站之內容皆由
+            <a class="link" rel="author" href="https://woodman.pw">
+                WoodMan
+            </a>
+            製作，以
+            <a class="link" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                創用CC 姓名標示-相同方式分享 4.0 國際授權條款
+            </a>
+            釋出。
         </p>
     </footer>
-    <script>
 
-    </script>
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
     <script src="js/index.js"></script>
 </body>

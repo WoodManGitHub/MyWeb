@@ -29,9 +29,9 @@ a:active {
     position: relative;
 }
 
-a:before {
-    font-family: "Font Awesome 5 Free";
-    content: "\f0c1";
+.link:before {
+    font-family: "Iconify";
+    content: url('https://api.iconify.design/entypo:link.svg?color=white&height=15');
     font-size: 0.8em;
     vertical-align: middle;
     display: inline-block;
@@ -152,7 +152,7 @@ em {
 }
 
 .control:before {
-    font-family: "Font Awesome 5 Free";
+    font-family: "Iconify";
     font-size: 0.8em;
     vertical-align: middle;
     display: inline-block;
@@ -160,7 +160,7 @@ em {
 }
 
 .control.play:before {
-    content: "\f04b";
+    content: url('https://api.iconify.design/ion:play.svg?color=white&height=15');
 }
 
 .control.play:after {
@@ -168,7 +168,7 @@ em {
 }
 
 .control.stop:before {
-    content: "\f04d";
+    content: url('https://api.iconify.design/ion:stop.svg?color=white&height=15');
 }
 
 .control.stop:after {
