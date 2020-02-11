@@ -303,6 +303,58 @@ em {
     content: "JS";
 }
 
+.project {
+    color: #f7f7f7;
+    background-color: rgb(133, 133, 133);
+    text-align: center;
+
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.project .work {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.project .work .work-inner {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background: #ffffff;
+    width: 95%;
+    height: 20em;
+    margin-bottom: 0.5em;
+    overflow: hidden;
+    padding-top: 1em;
+    border-radius: 1%;
+
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.26);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.26);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.26);
+
+}
+
+.project .work .work-inner img {
+    height: 55%;
+    width: 100%;
+}
+
+.project .work .work-inner h3 {
+    color: #000000;
+    padding: 1em;
+    padding-top: 0.1em;
+    padding-bottom: 0.5em;
+}
+
+.project .work .work-inner .text {
+    color: #000000;
+    padding: 1em;
+    padding-top: 0.1em;
+    padding-bottom: 0.5em;
+}
 
 .contact {
     color: #f7f7f7;
@@ -466,6 +518,7 @@ label.click {
 
 /* ie must die */
 .ie-8 .learning .skill,
+.ie-8 .project .work,
 .ie-8 .contact .contact-method {
     width: 33%;
 }
@@ -513,6 +566,7 @@ label.click {
 @media screen and (min-width: 600px) {
 
     .learning .skill,
+    .project .work,
     .contact .contact-method {
         width: 33%;
     }
@@ -549,6 +603,7 @@ label.click {
 @media screen and (min-width: 1000px) {
 
     .learning .skill,
+    .project .work,
     .contact .contact-method {
         width: 330px;
     }
