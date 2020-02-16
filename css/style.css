@@ -317,6 +317,27 @@ em {
     display: inline-block;
     position: relative;
     vertical-align: top;
+    overflow: hidden;
+}
+
+.project .foreground{
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    background-color: rgba(101, 101, 101, 0.95);;
+    transition: .5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+}
+
+.project .foreground ul {
+    margin-right:0.5cm;
 }
 
 .project .work .work-inner {
@@ -335,6 +356,10 @@ em {
     -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.26);
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.26);
 
+}
+
+.project .work-inner:hover .foreground{
+    transform: translateX(0);
 }
 
 .project .work .work-inner img {
