@@ -60,7 +60,7 @@ em {
     display: table;
 
     background: black;
-    background: url(../assets/bg.jpg);
+    background: url(../assets/bg.webp);
     background-size: auto, 100%;
     background-size: cover;
     background-repeat: no-repeat;
