@@ -303,7 +303,7 @@ em {
     content: "JS";
 }
 
-.project {
+.works {
     color: #f7f7f7;
     background-color: rgb(133, 133, 133);
     text-align: center;
@@ -312,7 +312,7 @@ em {
     padding-bottom: 2em;
 }
 
-.project .work {
+.works .work {
     width: 100%;
     display: inline-block;
     position: relative;
@@ -320,7 +320,7 @@ em {
     overflow: hidden;
 }
 
-.project .foreground{
+.works .foreground{
     text-align: left;
     position: absolute;
     top: 0;
@@ -336,11 +336,11 @@ em {
     font-size: larger;
 }
 
-.project .foreground ul {
+.works .foreground ul {
     margin-right:0.5cm;
 }
 
-.project .work .work-inner {
+.works .work .work-inner {
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -358,23 +358,23 @@ em {
 
 }
 
-.project .work-inner:hover .foreground{
+.works .work-inner:hover .foreground{
     transform: translateX(0);
 }
 
-.project .work .work-inner img {
+.works .work .work-inner img {
     height: 50%;
     width: 100%;
 }
 
-.project .work .work-inner h3 {
+.works .work .work-inner h3 {
     color: #000000;
     padding: 1em;
     padding-top: 0.1em;
     padding-bottom: 0.5em;
 }
 
-.project .work .work-inner .text {
+.works .work .work-inner .text {
     color: #000000;
     padding: 1em;
     padding-top: 0.1em;
@@ -543,7 +543,7 @@ label.click {
 
 /* ie must die */
 .ie-8 .learning .skill,
-.ie-8 .project .work,
+.ie-8 .works .work,
 .ie-8 .contact .contact-method {
     width: 33%;
 }
@@ -591,7 +591,7 @@ label.click {
 @media screen and (min-width: 600px) {
 
     .learning .skill,
-    .project .work,
+    .works .work,
     .contact .contact-method {
         width: 33%;
     }
@@ -628,7 +628,7 @@ label.click {
 @media screen and (min-width: 1000px) {
 
     .learning .skill,
-    .project .work,
+    .works .work,
     .contact .contact-method {
         width: 330px;
     }
