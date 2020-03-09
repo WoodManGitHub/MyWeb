@@ -4,7 +4,6 @@ body {
     height: 100%;
     background: #fefefe;
     border: none;
-    margin: none;
 }
 
 a,
@@ -194,7 +193,7 @@ em {
     color: #111111;
 
     padding-top: 2em;
-    padding-bottom: 2e;
+    padding-bottom: 2em;
 }
 
 .from .map {
