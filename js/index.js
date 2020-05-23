@@ -1,5 +1,5 @@
 if (!Function.prototype.bind) {
-    Function.prototype.bind = function(oThis) {
+    Function.prototype.bind = function (oThis) {
         if (typeof this !== 'function') {
             // closest thing possible to the ECMAScript 5
             // internal IsCallable function
@@ -8,11 +8,11 @@ if (!Function.prototype.bind) {
 
         var aArgs = Array.prototype.slice.call(arguments, 1),
             fToBind = this,
-            fNOP = function() {},
-            fBound = function() {
-                return fToBind.apply(this instanceof fNOP ?
-                    this :
-                    oThis,
+            fNOP = function () { },
+            fBound = function () {
+                return fToBind.apply(this instanceof fNOP
+                    ? this
+                    : oThis,
                     aArgs.concat(Array.prototype.slice.call(arguments)));
             };
 
@@ -29,7 +29,7 @@ if (!Function.prototype.bind) {
 // Reference: http://es5.github.io/#x15.4.4.19
 if (!Array.prototype.map) {
 
-    Array.prototype.map = function(callback, thisArg) {
+    Array.prototype.map = function (callback, thisArg) {
 
         var T, A, k;
 
@@ -131,34 +131,35 @@ class GhostType {
             $currentText: null,
         };
         this.actions = {
-            delay: function(args, next, typer) {
+            delay: function (args, next, typer) {
                 var waitTime = parseInt(args[1], 10);
                 if (!isNaN(waitTime)) {
                     typer.setTimeout(next, waitTime);
-                } else {
+                }
+                else {
                     next();
                 }
             },
-            setTypeInterval: function(args, next, typer) {
+            setTypeInterval: function (args, next, typer) {
                 var interval = parseInt(args[1], 10);
                 if (!isNaN(interval)) {
                     typer.options.interval = interval;
                 }
                 next();
             },
-            removeText: function(args, next, typer) {
+            removeText: function (args, next, typer) {
                 var length = parseInt(args[1], 10);
                 if (!isNaN(length)) {
                     typer.data.$remainingTexts.splice(0, length);
                 }
                 next();
             },
-            type: function(args, next, typer) {
+            type: function (args, next, typer) {
                 var text = args.slice(1).join(' ');
                 typer.data.$remainingTexts.splice.apply(typer.data.$remainingTexts, [0, 0].concat(text.split('')));
                 next();
             },
-            deleteLine: function(args, next, typer) {
+            deleteLine: function (args, next, typer) {
                 var lines, length = parseInt(args[1] || '1', 10);
                 if (isNaN(length)) {
                     length = 1;
@@ -170,17 +171,17 @@ class GhostType {
                 typer.data.$currentText = lines.join('<br>');
                 next();
             },
-            clear: function(args, next, typer) {
+            clear: function (args, next, typer) {
                 typer.data.$currentText = '';
                 next();
             },
-            reset: function(args, next, typer) {
+            reset: function (args, next, typer) {
                 typer.reset();
             }
         };
         this.handles = {
-            start: function() {},
-            stop: function() {}
+            start: function () { },
+            stop: function () { }
         };
     }
     start() {
@@ -201,11 +202,12 @@ class GhostType {
             clearTimeout(this.timeoutId);
             if (window.console && window.console.error) {
                 window.console.error(new Error('setTimeout during timeout exist'), func);
-            } else {
+            }
+            else {
                 window.alert(new Error('setTimeout during timeout exist'), func);
             }
         }
-        this.timeoutId = setTimeout(function() {
+        this.timeoutId = setTimeout(function () {
             this.clearTimeout();
             func();
         }.bind(this), delay);
@@ -256,7 +258,8 @@ class GhostType {
             }
             this.type(this.data.$remainingTexts.shift());
             this.setTimeout(this.tick_.bind(this), this.options.interval);
-        } else if (this.data.$remainingTexts[0] === '<') {
+        }
+        else if (this.data.$remainingTexts[0] === '<') {
             var text = this.data.$remainingTexts.shift();
             while (this.data.$remainingTexts[0] !== '>') {
                 text += this.data.$remainingTexts.shift();
@@ -264,7 +267,8 @@ class GhostType {
             text += this.data.$remainingTexts.shift();
             this.type(text);
             this.setTimeout(this.tick_.bind(this), this.options.interval);
-        } else {
+        }
+        else {
             this.type(this.data.$remainingTexts.shift());
             this.setTimeout(this.tick_.bind(this), this.options.interval);
         }
@@ -277,27 +281,27 @@ class GhostType {
 
 var typer = new GhostType(".about-inner p.target");
 
-typer.actions.who = function(args, next, typer) {
+typer.actions.who = function (args, next, typer) {
     var question = args.slice(1).join(' ');
     var name = typer.data.visitorName || window.prompt(question, 'visitor') || 'visitor';
     typer.data.visitorName = name;
     typer.data.$remainingTexts.splice.apply(typer.data.$remainingTexts, [0, 0].concat(name.split('')));
     next();
 };
-typer.actions.setStyle = function(args, next, typer) {
+typer.actions.setStyle = function (args, next, typer) {
     var style = args[1];
     var prop = args[2] || '';
     typer.target.css(style, prop);
     next();
 };
-typer.actions.setStyleToSelector = function(args, next, typer) {
+typer.actions.setStyleToSelector = function (args, next, typer) {
     var selector = args[1]
     var style = args[2];
     var prop = args[3] || '';
     $(selector).css(style, prop);
     next();
 };
-typer.actions.animate = function(args, next, typer) {
+typer.actions.animate = function (args, next, typer) {
     var called = false;
     var selector = args[1];
 
@@ -308,19 +312,19 @@ typer.actions.animate = function(args, next, typer) {
     props[style] = val;
 
     var duration = parseInt(args[4]) || 500;
-    $(selector).animate(props, duration, 'swing', function() {
+    $(selector).animate(props, duration, 'swing', function () {
         if (called) return;
         called = true;
         next();
         console.log(args);
     });
 }
-typer.actions.alert = function(args, next, typer) {
+typer.actions.alert = function (args, next, typer) {
     var text = args.slice(1).join(' ');
     alert(text);
     next();
 }
-typer.actions.scrollTo = function(args, next, typer) {
+typer.actions.scrollTo = function (args, next, typer) {
     var called = false;
     var target = $(args[1]);
     console.log(target);
@@ -329,7 +333,7 @@ typer.actions.scrollTo = function(args, next, typer) {
     if (isNaN(time)) {
         time = 1000;
     }
-    $('html,body').animate({ scrollTop: yPos }, time, 'swing', function() {
+    $('html,body').animate({ scrollTop: yPos }, time, 'swing', function () {
         if (called) return;
         called = true;
         next();
@@ -337,7 +341,7 @@ typer.actions.scrollTo = function(args, next, typer) {
 
 }
 $(".control").removeClass("hide");
-$(".control").on("click", function() {
+$(".control").on("click", function () {
     if (!typer.playing) {
         typer.reset();
         typer.start();
@@ -347,10 +351,10 @@ $(".control").on("click", function() {
         $(this).removeClass('stop').addClass('play');
     }
 });
-typer.handles.start = function() {
+typer.handles.start = function () {
     $(".control").removeClass('play').addClass('stop');
 }
-typer.handles.stop = function() {
+typer.handles.stop = function () {
     $(".control").removeClass('stop').addClass('play');
 }
 //typer.start();
@@ -358,7 +362,7 @@ typer.handles.stop = function() {
 
 
 /* fix ie 8 checked */
-$('#toggle-menu').on('change', function() {
+$('#toggle-menu').on('change', function () {
     var _ = $(this);
     if (_.is(':checked')) {
         _.addClass('checked');
@@ -373,7 +377,7 @@ $('#toggle-menu').on('change', function() {
         }
     }
 })
-$('label').on('click', function() {
+$('label').on('click', function () {
     var id = '#' + $(this).attr('for');
     if ($('html').hasClass('ie-8')) {
         $(id).prop('checked', !$(id).prop('checked'));
@@ -381,82 +385,80 @@ $('label').on('click', function() {
     $(id).trigger('change');
 })
 
-/* make nav color transform */
-;
-(function() {
-    function throttle(func, delay) {
-        var id = null;
-        return function() {
-            if (!id) {
-                id = setTimeout(function() {
-                    id = null;
-                    func();
-                }, delay)
+    /* make nav color transform */
+    ; (function () {
+        function throttle(func, delay) {
+            var id = null;
+            return function () {
+                if (!id) {
+                    id = setTimeout(function () {
+                        id = null;
+                        func();
+                    }, delay)
+                }
             }
         }
-    }
-    if (!window.console) {
-        window.console = {
-            log: window.alert
-        };
-    }
-    var navHeight = $('nav').height();
-    var header = $('header');
-    var headerBottom = $('header').offset().top + $('header').outerHeight() - navHeight;
-    var color = [41, 182, 246];
-    var initAlpha = 0;
-    var finalAlpha = 1;
-    var ie8 = '#29B6F6';
-    var handle = throttle(function(ev) {
-        var alpha;
-        var shadow;
-        var currentScroll = $(window).scrollTop();
-        //console.log(navHeight, headerBottom, currentScroll);
-        if (currentScroll < headerBottom - navHeight) {
-            alpha = initAlpha;
-            shadow = '';
-        } else if (headerBottom < currentScroll) {
-            alpha = finalAlpha;
-            shadow = '0 3px 6px rgba(0,0,0,0.32)';
-        } else {
-            alpha = ((headerBottom - currentScroll) * initAlpha +
-                    (currentScroll - headerBottom + navHeight) * finalAlpha) /
-                navHeight;
-            shadow = '';
+        if (!window.console) {
+            window.console = {
+                log: window.alert
+            };
         }
-        //alert('rgba(' + color.concat([alpha]).join('') + ')');
-        var bg = 'rgba(' + color.concat([alpha]).join(',') + ')';
-        if ($('html').hasClass('ie-8') && headerBottom < currentScroll) {
-            bg = ie8;
-        }
-        $('nav').css({
-            'background': bg,
-            'boxShadow': shadow
-        });
-        //console.log(alpha, bg);
-    }, 100);
-    $(document).on('scroll', handle);
-    $(window).scroll(handle);
-    $(window).on('resize', function() {
-        navHeight = $('nav').height();
-        headerBottom = $('header').offset().top + $('header').outerHeight() - navHeight;
-        $(document).trigger('scroll');
-        $(window).trigger('scroll');
-    })
-}());
+        var navHeight = $('nav').height();
+        var header = $('header');
+        var headerBottom = $('header').offset().top + $('header').outerHeight() - navHeight;
+        var color = [41, 182, 246];
+        var initAlpha = 0;
+        var finalAlpha = 1;
+        var ie8 = '#29B6F6';
+        var handle = throttle(function (ev) {
+            var alpha;
+            var shadow;
+            var currentScroll = $(window).scrollTop();
+            //console.log(navHeight, headerBottom, currentScroll);
+            if (currentScroll < headerBottom - navHeight) {
+                alpha = initAlpha;
+                shadow = '';
+            } else if (headerBottom < currentScroll) {
+                alpha = finalAlpha;
+                shadow = '0 3px 6px rgba(0,0,0,0.32)';
+            } else {
+                alpha = ((headerBottom - currentScroll) * initAlpha +
+                    (currentScroll - headerBottom + navHeight) * finalAlpha)
+                    / navHeight;
+                shadow = '';
+            }
+            //alert('rgba(' + color.concat([alpha]).join('') + ')');
+            var bg = 'rgba(' + color.concat([alpha]).join(',') + ')';
+            if ($('html').hasClass('ie-8') && headerBottom < currentScroll) {
+                bg = ie8;
+            }
+            $('nav').css({
+                'background': bg,
+                'boxShadow': shadow
+            });
+            //console.log(alpha, bg);
+        }, 100);
+        $(document).on('scroll', handle);
+        $(window).scroll(handle);
+        $(window).on('resize', function () {
+            navHeight = $('nav').height();
+            headerBottom = $('header').offset().top + $('header').outerHeight() - navHeight;
+            $(document).trigger('scroll');
+            $(window).trigger('scroll');
+        })
+    }());
 
 /* make scroll smooth */
 
 /**
- * Check a href for an anchor. If exists, and in document, scroll to it.
- * If href argument ommited, assumes context (this) is HTML Element,
- * which will be the case when invoked by jQuery after an event
- */
-;
-(function() {
+* Check a href for an anchor. If exists, and in document, scroll to it.
+* If href argument ommited, assumes context (this) is HTML Element,
+* which will be the case when invoked by jQuery after an event
+*/
+; (function () {
     function scroll_if_anchor(href) {
-        var ev = typeof(href) == "string" ? null : href;
-        href = typeof(href) == "string" ? href : $(this).attr("href");
+        var ev = typeof (href) == "string" ? null : href;
+        href = typeof (href) == "string" ? href : $(this).attr("href");
 
         // You could easily calculate this dynamically if you prefer
         var fromTop = 0;
@@ -487,8 +489,7 @@ $('label').on('click', function() {
 }());
 
 /* link scrollspy */
-;
-(function() {
+; (function () {
     var spyLinks = [
         "#about-wrapper",
         "#learning",
@@ -496,16 +497,15 @@ $('label').on('click', function() {
         "#copyright"
     ];
     var offsets = 40;
-    var linkContainers = spyLinks.map(function(val) {
+    var linkContainers = spyLinks.map(function (val) {
         return $('a[href=' + val + ']').parent();
     });
-    var elements = spyLinks.map(function(val) {
+    var elements = spyLinks.map(function (val) {
         return $(val);
     });
     var areas = null;
-
     function getAreas() {
-        areas = elements.map(function(el) {
+        areas = elements.map(function (el) {
             return [
                 el.offset().top,
                 el.offset().top + el.outerHeight()
@@ -515,7 +515,7 @@ $('label').on('click', function() {
     getAreas();
 
     //console.log(linkContainers, elements, areas);
-    var scrollHandle = function() {
+    var scrollHandle = function () {
         var currentScroll = $(window).scrollTop() + offsets;
         var max = areas.length - 1;
         var foundIndex = null;
@@ -527,14 +527,14 @@ $('label').on('click', function() {
         }
         //console.log(currentScroll, areas, index);
         index = index > max ? max : index;
-        linkContainers.map(function(el) {
+        linkContainers.map(function (el) {
             el.removeClass('selected');
         })
         linkContainers[index].addClass('selected');
     }
     $(document).on('scroll', scrollHandle);
     $(window).scroll(scrollHandle);
-    $(window).on('resize', function() {
+    $(window).on('resize', function () {
         getAreas();
         $(document).trigger('scroll');
         $(window).trigger('scroll');
